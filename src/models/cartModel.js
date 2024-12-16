@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+
+import mongoose from 'mongoose'
 
 const CartItemSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -7,10 +8,10 @@ const CartItemSchema = new mongoose.Schema({
   quantity: { type: Number, default: 1 },
 });
 
-// const Cart = new mongoose.Schema({
-//   items: [CartItemSchema],
-// });
+const CartSchema = new mongoose.Schema({
+  items: [CartItemSchema],
+});
 
-const CartSchema = mongoose.model('Cart', CartSchema);
+const Cart = mongoose.model('Cart', CartSchema);
 
-export default CartSchema;
+export default Cart;

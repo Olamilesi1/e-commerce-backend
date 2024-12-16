@@ -4,7 +4,7 @@ import {
   getCart,
   increaseCart,
   decreaseCart
-} from "../controllers/cartControllers.js";
+} from "../controllers/cartController.js";
 
 const router = express.Router();
 
@@ -12,8 +12,8 @@ const router = express.Router();
 
 router.post("/add-cart", addCart);
 router.get("/get-cart", getCart);
-router.put("/increase-cart", increaseCart);
-router.put("/decrease-cart", decreaseCart);
+router.put("/increase-cart/:id", increaseCart);
+router.put("/decrease-cart/:id", decreaseCart);
 
 export default router;
 
